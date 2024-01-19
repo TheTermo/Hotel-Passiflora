@@ -4,9 +4,11 @@
 
 Strona hotelu z systemem rezerwacji 
 
+https://hotel-passiflora-booking-site-react.netlify.app/
+
 ## Funkcje
 
-- Przeglądanie dostępnych pokoi
+- Przeglądanie pokoi
 - Rezerwacja pokoi
 - Informacje o udogodnieniach i lokalizacji hotelu
 
@@ -15,7 +17,7 @@ Strona hotelu z systemem rezerwacji
 Projekt został zbudowany przy użyciu następujących technologii:
 
 - React
-- React Router (do obsługi nawigacji w aplikacji)
-- Styled Components (do stylizacji komponentów)
--
+- Material UI
+- SASS
+
 
