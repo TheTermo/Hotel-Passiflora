@@ -1,6 +1,8 @@
 import "./Footer.scss"
 import {Link} from "react-router-dom";
 import React from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faFacebookSquare, faInstagramSquare, faTwitterSquare, faBehanceSquare } from '@fortawesome/free-brands-svg-icons';
 
 const Footer = () => {
     return (
@@ -10,10 +12,10 @@ const Footer = () => {
                     <h1>Hotel Passiflora</h1>
                 </div>
                 <div>
-                    <i className="fa-brands fa-facebook-square"></i>
-                    <i className="fa-brands fa-instagram-square"></i>
-                    <i className="fa-brands fa-twitter-square"></i>
-                    <i className="fa-brands fa-behance-square"></i>
+                    <FontAwesomeIcon icon={faFacebookSquare} className="icons"/>
+                    <FontAwesomeIcon icon={faInstagramSquare} className="icons"/>
+                    <FontAwesomeIcon icon={faTwitterSquare} className="icons"/>
+                    <FontAwesomeIcon icon={faBehanceSquare} className="icons"/>
                 </div>
             </div>
 

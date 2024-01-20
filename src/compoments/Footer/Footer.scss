@@ -10,7 +10,7 @@
     justify-content: space-between;
     flex-wrap: wrap;
 
-    i {
+    .icons{
       color: white;
       font-size: 2rem;
       margin-left: 1rem;
@@ -37,7 +37,7 @@
       text-align: center;
       margin-bottom: 10px;
 
-      i{
+      .icons{
         padding-top: 5%;
       }
     }
