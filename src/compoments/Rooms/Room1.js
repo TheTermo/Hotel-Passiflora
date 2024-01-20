@@ -3,7 +3,7 @@ import Navbar from "../Navbar/Navbar";
 import Header from "../Header/Header";
 import AboutImg from "../../images/gradient.jpg";
 import "./Rooms.scss";
-import { Grid, Paper } from "@mui/material";
+import {Button, Grid, Paper} from "@mui/material";
 import axios from 'axios';
 import CurrencyConverter from "./CurrencyConverter";
 import Footer from "../Footer/Footer";
@@ -70,9 +70,10 @@ function Room1() {
                                     onSelectDate={handleSelectDate}
                                 />
                             </div>
-                            <button onClick={() => handleSelectDate({start, end})}>
-                                Zarezerwuj teraz
-                            </button><br/>
+                            <Button onClick={() => handleSelectDate({start, end})}
+                                    variant="contained" color="primary" style={{ marginTop: '2%', marginBottom: '2%'}}>
+                                    Zarezerwuj teraz</Button>
+
                             <p>Cena: {roomPrice} zł</p>
                             <CurrencyConverter roomPrice={roomPrice}/>
                         </Paper>
