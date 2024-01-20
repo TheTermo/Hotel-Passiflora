@@ -5,7 +5,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import AboutImg from "../../../images/vojtech-bruzek-Yrxr3bsPdS0-unsplash.jpg";
 import { Grid } from '@mui/material';
-import "./Reservation.scss";
+import "./ReservationGrid.scss";
 import {Link} from "react-router-dom";
 export default function ImgMediaCard() {
     return (

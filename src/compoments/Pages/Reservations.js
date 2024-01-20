@@ -1,7 +1,7 @@
 import Navbar from "../Navbar/Navbar";
 import Header from "../Header/Header";
 import AboutImg from "../../images/vojtech-bruzek-Yrxr3bsPdS0-unsplash.jpg";
-import ImgMediaCard from "../Rooms/Reservations/Reservations";
+import ImgMediaCard from "../Rooms/Reservations/ReservationGrid";
 import Footer from "../Footer/Footer";
 function Reservations  (){
     return(
