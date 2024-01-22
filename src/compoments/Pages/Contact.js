@@ -62,17 +62,12 @@ function Contact  (){
                             </CardContent>
                         </Card>
                     </Grid>
-
-                    <Grid item xs={12}>
-                        <h3>(mapa)</h3>
-                    </Grid>
                 </Grid>
             </div>
             <Footer/>
         </>
     )
 }
-
 export default Contact;
 
 
