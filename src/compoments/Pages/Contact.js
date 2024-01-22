@@ -22,7 +22,7 @@ function Contact  (){
                     <Grid item xs={6} align="center">
                         <h2>Kontakt: </h2><br/>
                         <p><FontAwesomeIcon icon={faMap}/> Wczasowa 25</p><br/>
-                        <p><FontAwesomeIcon icon={faMapMarker}/> 05-402 Otwock, PL</p><br/>
+                        <p><FontAwesomeIcon icon={faMapMarker}/> 58-540 Karpacz, PL</p><br/>
                         <p><FontAwesomeIcon icon={faPhone}/> 21 37 666</p><br/>
                         <FontAwesomeIcon icon={faEnvelope}/><a
                         href="mailto:adres_email@example.com"> recepcja@z-hotel.com</a>
