@@ -25,7 +25,7 @@ function Contact  (){
                         <p><FontAwesomeIcon icon={faMapMarker}/> 58-540 Karpacz, PL</p><br/>
                         <p><FontAwesomeIcon icon={faPhone}/> 21 37 666</p><br/>
                         <FontAwesomeIcon icon={faEnvelope}/><a
-                        href="mailto:adres_email@example.com"> recepcja@z-hotel.com</a>
+                        href="mailto:adres_email@example.com"> recepcja@mail</a>
                     </Grid>
 
                     <Grid item xs={6}>
