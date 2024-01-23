@@ -39,7 +39,7 @@
   opacity: 0;
   transform: scale(0);
   overflow: hidden;
-  z-index: 999;
+  z-index: 9999;
 
   &.open {
     visibility: visible;
