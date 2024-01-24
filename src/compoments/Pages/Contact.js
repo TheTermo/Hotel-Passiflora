@@ -19,7 +19,7 @@ function Contact  (){
             />
             <div className="zGrid">
                 <Grid container spacing={2}>
-                    <Grid item xs={6} align="center">
+                    <Grid item xs={12} sm={6} align="center">
                         <h2>Kontakt: </h2><br/>
                         <p><FontAwesomeIcon icon={faMap}/> Wczasowa 25</p><br/>
                         <p><FontAwesomeIcon icon={faMapMarker}/> 58-540 Karpacz, PL</p><br/>
@@ -28,7 +28,7 @@ function Contact  (){
                         href="mailto:adres_email@example.com"> recepcja@mail</a>
                     </Grid>
 
-                    <Grid item xs={6}>
+                    <Grid item xs={12} sm={6}>
                         <Card style={{maxWidth:550, padding:"10px 5px"}}>
                             <CardContent>
                                 <Typography gutterBottom variant="h5">Napisz do nas</Typography>
