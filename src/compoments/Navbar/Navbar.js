@@ -1,9 +1,36 @@
 import  { Component} from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.scss";
-import { MenuItems } from "./MenuItems";
+
 
 class Navbar extends Component {
+
+    constructor(props) {
+        super(props);
+        this.MenuItems = [
+            {
+                title: "Strona Główna",
+                url: '/',
+                cName: "nav-links"
+            },
+            {
+                title: "Rezerwacje",
+                url: '/rezerwacje',
+                cName: "nav-links"
+            },
+            {
+                title: "Galeria",
+                url: '/galeria',
+                cName: "nav-links"
+            },
+            {
+                title: "Kontakt",
+                url: '/kontakt',
+                cName: "nav-links"
+            }
+        ];
+    }
+
     state = {clicked: false};
     handleClick = () =>{
         this.setState({clicked: !this.state.clicked})
@@ -18,7 +45,7 @@ class Navbar extends Component {
                 </div>
 
                 <ul className={this.state.clicked ? "nav-menu active" : "nav-menu"}>
-                    {MenuItems.map((item, index) => {
+                    {this.MenuItems.map((item, index) => {
                         return (
                             <li key={index}>
                                 <Link className={item.cName} to={item.url}>{item.title}</Link>
