@@ -14,7 +14,7 @@ const roomsData = [
         bedSize: "Jednoosobowe",
         privateBathroom: 1,
         roomPrice: 80,
-        images: [Image1,Image2,Image3],
+        images: [Image1, Image2, Image3],
         description: "Pokój jednoosobowy jest zarezerwowany tylko dla jednego gościa. Znajduje się w nim sypialnia z łóżkiem o pojedynczym rozmiarze oraz prywatna łazienka. Wszystko, czego potrzebujesz, jest dla Ciebie przygotowane: pościel i koce, ręczniki, mydło i szampon, suszarka do włosów są zapewnione. W pokoju znajduje się klimatyzacja, a oczywiście również WiFi."
     },
     {

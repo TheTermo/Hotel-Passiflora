@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import Navbar from "../Navbar/Navbar";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
@@ -8,34 +8,28 @@ import { Button, Grid, Paper } from "@mui/material";
 import CurrencyConverter from "./CurrencyConverter";
 import roomsData from "./roomsData";
 import { useParams } from 'react-router-dom';
-import "../Gallery/galleryGrip.scss"
-import CloseIcon from '@mui/icons-material/Close';
-import Image1 from "../../images/img1.jpg";
-import Image2 from "../../images/img2.jpg";
-import Image3 from "../../images/img3.jpg";
-import Image4 from "../../images/img4.jpg";
-import Image5 from "../../images/img5.jpg";
-import Image6 from "../../images/img6.jpg";
 
 const Room = () => {
     const { id } = useParams();
     const roomId = parseInt(id);
     const room = roomsData.find(room => room.id === roomId);
 
-    let data = [
-        {id: 1, imgSrc: Image1,},
-        {id: 2, imgSrc: Image2,},
-        {id: 3, imgSrc: Image3,},
-        {id: 4, imgSrc: Image4,},
-        {id: 5, imgSrc: Image5,},
-        {id: 6, imgSrc: Image6,},
-    ];
-    const [model, setModel] = useState(false);
-    const [tempimgSrc, setTempImgSrc] = useState('');
-    const getImg = (imgSrc) =>{
-        setTempImgSrc(imgSrc);
-        setModel(true);
-    }
+    // const images = roomsData.map(room => room.images).flat();
+
+    // let data = [
+    //     {id: 1, imgSrc: Image1,},
+    //     {id: 2, imgSrc: Image2,},
+    //     {id: 3, imgSrc: Image3,},
+    //     {id: 4, imgSrc: Image4,},
+    //     {id: 5, imgSrc: Image5,},
+    //     {id: 6, imgSrc: Image6,},
+    // ];
+    // const [model, setModel] = useState(false);
+    // const [tempimgSrc, setTempImgSrc] = useState('');
+    // const getImg = (imgSrc) =>{
+    //     setTempImgSrc(imgSrc);
+    //     setModel(true);
+    // }
 
     return (
         <>
@@ -67,23 +61,28 @@ const Room = () => {
                     <Grid item xs={12}>
                         <h3>Zdjęcia</h3>
 
-                        {/*{room.images.map((image, index) => (*/}
-                        {/*    <img key={index} src={image} alt={`Zdjęcie ${index + 1}`} style={{ width: '100%' }} />*/}
-                        {/*))}*/}
+                        {room.images && room.images.length > 0 ? (
+                            room.images.map((image, index) => (
+                                <div className="gall" key={index}>
+                                    <img key={index} src={image} alt={`Zdjęcie ${index + 1}`} style={{ width: '100%' }} className="pics"/>
+                                </div>
+                            ))):(
+                            <p>No images available</p>
+                        )}
 
-                        <div className={model ? "model open" : "model"}>
-                            <img alt="img" src={tempimgSrc}/>
-                            <CloseIcon onClick={() => setModel(false)}/>
-                        </div>
-                        <div className="gallery">
-                            {data.map((item, index)=>{
-                                return(
-                                    <div className="pics" key={index} onClick={()=> getImg(item.imgSrc)}>
-                                        <img alt="img1" src={item.imgSrc} style={{width:'100%'}}/>
-                                    </div>
-                                )
-                            })}
-                        </div>
+                        {/*<div className={model ? "model open" : "model"}>*/}
+                        {/*    <img alt="img" src={tempimgSrc}/>*/}
+                        {/*    <CloseIcon onClick={() => setModel(false)}/>*/}
+                        {/*</div>*/}
+                        {/*<div className="gallery">*/}
+                        {/*    {data.map((item, index) => {*/}
+                        {/*        return (*/}
+                        {/*            <div className="pics" key={index} onClick={() => getImg(item.imgSrc)}>*/}
+                        {/*                <img alt="img1" src={item.imgSrc} style={{width: '100%'}}/>*/}
+                        {/*            </div>*/}
+                        {/*        )*/}
+                        {/*    })}*/}
+                        {/*</div>*/}
 
                     </Grid>
                 </Grid>

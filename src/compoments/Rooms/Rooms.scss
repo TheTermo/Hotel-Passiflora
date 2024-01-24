@@ -4,4 +4,14 @@
   p {
     line-height: 1.5;
   }
+
+  .gall{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 25%;
+    @media screen and (max-width: 850px) {
+      column-count: 1;
+    }
+  }
 }

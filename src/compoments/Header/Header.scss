@@ -38,6 +38,11 @@ $overlay-color: rgba(0, 0, 0, 0.3);
       font-weight: bold;
       letter-spacing: 2px;
       color: $black;
+      &:hover{
+        background-color: #01959a;
+        transition: all 0.2s ease-in-out;
+        color: white;
+      }
     }
   }
 
