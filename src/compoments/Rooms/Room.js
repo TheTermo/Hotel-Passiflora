@@ -8,28 +8,12 @@ import { Button, Grid, Paper } from "@mui/material";
 import CurrencyConverter from "./CurrencyConverter";
 import roomsData from "./roomsData";
 import { useParams } from 'react-router-dom';
+import Carousel from "react-material-ui-carousel";
 
 const Room = () => {
     const { id } = useParams();
     const roomId = parseInt(id);
     const room = roomsData.find(room => room.id === roomId);
-
-    // const images = roomsData.map(room => room.images).flat();
-
-    // let data = [
-    //     {id: 1, imgSrc: Image1,},
-    //     {id: 2, imgSrc: Image2,},
-    //     {id: 3, imgSrc: Image3,},
-    //     {id: 4, imgSrc: Image4,},
-    //     {id: 5, imgSrc: Image5,},
-    //     {id: 6, imgSrc: Image6,},
-    // ];
-    // const [model, setModel] = useState(false);
-    // const [tempimgSrc, setTempImgSrc] = useState('');
-    // const getImg = (imgSrc) =>{
-    //     setTempImgSrc(imgSrc);
-    //     setModel(true);
-    // }
 
     return (
         <>
@@ -60,30 +44,11 @@ const Room = () => {
                     </Grid>
                     <Grid item xs={12}>
                         <h3>Zdjęcia</h3>
-
-                        {/*{room.images && room.images.length > 0 ? (*/}
-                        {/*    room.images.map((image, index) => (*/}
-                        {/*        <div className="gall" key={index}>*/}
-                        {/*            <img key={index} src={image} alt={`Zdjęcie ${index + 1}`} style={{ width: '100%' }} className="pics"/>*/}
-                        {/*        </div>*/}
-                        {/*    ))):(*/}
-                        {/*    <p>No images available</p>*/}
-                        {/*)}*/}
-
-                        {/*<div className={model ? "model open" : "model"}>*/}
-                        {/*    <img alt="img" src={tempimgSrc}/>*/}
-                        {/*    <CloseIcon onClick={() => setModel(false)}/>*/}
-                        {/*</div>*/}
-                        {/*<div className="gallery">*/}
-                        {/*    {data.map((item, index) => {*/}
-                        {/*        return (*/}
-                        {/*            <div className="pics" key={index} onClick={() => getImg(item.imgSrc)}>*/}
-                        {/*                <img alt="img1" src={item.imgSrc} style={{width: '100%'}}/>*/}
-                        {/*            </div>*/}
-                        {/*        )*/}
-                        {/*    })}*/}
-                        {/*</div>*/}
-
+                        <Carousel>
+                            {room.images.map((image, i) => (
+                                <Item key={i} image={image} />
+                            ))}
+                        </Carousel>
                     </Grid>
                 </Grid>
             </div>
@@ -91,4 +56,11 @@ const Room = () => {
         </>
     );
 };
+function Item(props) {
+    return (
+        <Paper>
+            <img src={props.image} alt="Room" className="imageStyle" />
+        </Paper>
+    );
+}
 export default Room;

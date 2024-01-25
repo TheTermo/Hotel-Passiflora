@@ -3,6 +3,7 @@ import Header from "../Header/Header";
 import DescriptionHotel from "../HomeBody/DescriptionHotel";
 import Attractions from "../HomeBody/Attractions";
 import Footer from "../Footer/Footer";
+import Testimonials from "../HomeBody/Testimonials";
 
 function Home  (){
     return(
@@ -18,10 +19,10 @@ function Home  (){
                      btnClass="show"
                 />
                 <DescriptionHotel/>
+                <Testimonials/>
                 <Attractions/>
                 <Footer/>
             </>
         )
 }
-
 export default Home;
