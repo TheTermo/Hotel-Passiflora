@@ -10,7 +10,7 @@ https://hotel-passiflora-booking-site-react.netlify.app/
 
 - Przeglądanie pokoi
 - Rezerwacja pokoi
-- Informacje o udogodnieniach i lokalizacji hotelu
+- Informacje o udogodnieniach i różne info o hotelu
 
 ## Technologie
 
