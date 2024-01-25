@@ -61,14 +61,14 @@ const Room = () => {
                     <Grid item xs={12}>
                         <h3>Zdjęcia</h3>
 
-                        {room.images && room.images.length > 0 ? (
-                            room.images.map((image, index) => (
-                                <div className="gall" key={index}>
-                                    <img key={index} src={image} alt={`Zdjęcie ${index + 1}`} style={{ width: '100%' }} className="pics"/>
-                                </div>
-                            ))):(
-                            <p>No images available</p>
-                        )}
+                        {/*{room.images && room.images.length > 0 ? (*/}
+                        {/*    room.images.map((image, index) => (*/}
+                        {/*        <div className="gall" key={index}>*/}
+                        {/*            <img key={index} src={image} alt={`Zdjęcie ${index + 1}`} style={{ width: '100%' }} className="pics"/>*/}
+                        {/*        </div>*/}
+                        {/*    ))):(*/}
+                        {/*    <p>No images available</p>*/}
+                        {/*)}*/}
 
                         {/*<div className={model ? "model open" : "model"}>*/}
                         {/*    <img alt="img" src={tempimgSrc}/>*/}

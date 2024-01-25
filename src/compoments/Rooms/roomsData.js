@@ -15,63 +15,62 @@ const roomsData = [
         privateBathroom: 1,
         roomPrice: 80,
         images: [Image1, Image2, Image3],
-        description: "Pokój jednoosobowy jest zarezerwowany tylko dla jednego gościa. Znajduje się w nim sypialnia z łóżkiem o pojedynczym rozmiarze oraz prywatna łazienka. Wszystko, czego potrzebujesz, jest dla Ciebie przygotowane: pościel i koce, ręczniki, mydło i szampon, suszarka do włosów są zapewnione. W pokoju znajduje się klimatyzacja, a oczywiście również WiFi."
+        description: "Pokój jednoosobowy jest zarezerwowany tylko dla jednego gościa. Znajduje się w nim sypialnia z łóżkiem o pojedynczym rozmiarze oraz prywatna łazienka. Wszystko, czego potrzebujesz, jest dla Ciebie przygotowane: pościel i koce, ręczniki, mydło i szampon, suszarka do włosów są zapewnione. W pokoju znajduje się klimatyzacja, i oczywiście również WiFi."
     },
     {
         id:2,
-        roomType:"Pokój Dwuosobowy",
-        maxGuests: 2,
-        roomSize: 28,
-        bedSize: "Dwuosobowe",
+        roomType:"Pokój jednoosobowy Deluxe",
+        maxGuests: 1,
+        roomSize: 25,
+        bedSize: "Jednoosobowe duże",
         privateBathroom: 1,
-        roomPrice: 180,
+        roomPrice: 120,
         images: [Image4,Image5,Image6],
-        description: "Pokój DWUOSOBOWY jest zarezerwowany tylko dla jednego gościa. Znajduje się w nim sypialnia z łóżkiem o pojedynczym rozmiarze oraz prywatna łazienka. Wszystko, czego potrzebujesz, jest dla Ciebie przygotowane: pościel i koce, ręczniki, mydło i szampon, suszarka do włosów są zapewnione. W pokoju znajduje się klimatyzacja, a oczywiście również WiFi."
+        description: "Pokój jednoosobowy typu Deluxe jest przeznaczony wyłącznie dla jednego gościa. Znajduje się w nim sypialnia z łóżkiem o rozmiarze małego podwójnego oraz prywatna łazienka. Wszystko, czego potrzebujesz, jest dla Ciebie przygotowane: pościel i koce, ręczniki, mydło i szampon, suszarka do włosów są zapewnione. W pokoju znajduje się klimatyzacja oraz oczywiście WiFi."
     },
     {
         id:3,
-        roomType:"Pokój 3",
-        maxGuests: 2,
-        roomSize: 28,
+        roomType:"Pokój dwuosobowy",
+        maxGuests: "2 -3",
+        roomSize: 34,
         bedSize: "Dwuosobowe",
         privateBathroom: 1,
         roomPrice: 180,
         images: [Image1,Image2,Image3],
-        description: "Pokój DWUOSOBOWY jest zarezerwowany tylko dla jednego gościa. Znajduje się w nim sypialnia z łóżkiem o pojedynczym rozmiarze oraz prywatna łazienka. Wszystko, czego potrzebujesz, jest dla Ciebie przygotowane: pościel i koce, ręczniki, mydło i szampon, suszarka do włosów są zapewnione. W pokoju znajduje się klimatyzacja, a oczywiście również WiFi."
+        description: "Pokój dwuosobowy jest przeznaczony dla dwóch lub trzech gości.  Znajduje się w nim sypialnia z łóżkiem o rozmiarze podwójnym oraz prywatna łazienka. Wszystko, czego potrzebujesz, jest dla Ciebie przygotowane: pościel i koce, ręczniki, mydło i szampon, suszarka do włosów są zapewnione. W pokoju znajduje się klimatyzacja oraz oczywiście WiFi."
     },
     {
         id:4,
-        roomType:"Pokój 4",
-        maxGuests: 2,
-        roomSize: 28,
-        bedSize: "Dwuosobowe",
+        roomType:"Pokój dwuosobowy Deluxe",
+        maxGuests: "2 - 3",
+        roomSize: 41,
+        bedSize: "Dwuosobowe wielkie",
         privateBathroom: 1,
-        roomPrice: 180,
+        roomPrice: 240,
         images: [Image1,Image2,Image3],
-        description: "Pokój DWUOSOBOWY jest zarezerwowany tylko dla jednego gościa. Znajduje się w nim sypialnia z łóżkiem o pojedynczym rozmiarze oraz prywatna łazienka. Wszystko, czego potrzebujesz, jest dla Ciebie przygotowane: pościel i koce, ręczniki, mydło i szampon, suszarka do włosów są zapewnione. W pokoju znajduje się klimatyzacja, a oczywiście również WiFi."
+        description: "Pokój dwuosobowy typu Deluxe jest przeznaczony dla dwóch lub trzech gości. Znajduje się w nim sypialnia z łóżkiem o rozmiarze Queen oraz prywatna łazienka. Wszystko, czego potrzebujesz, jest dla Ciebie przygotowane: pościel i koce, ręczniki, mydło i szampon, suszarka do włosów są zapewnione. W pokoju znajduje się klimatyzacja oraz oczywiście WiFi."
     },
     {
         id:5,
-        roomType:"Pokój 5",
-        maxGuests: 2,
-        roomSize: 28,
+        roomType:"Pokój dwuosobowy z dwoma łóżkami",
+        maxGuests: "2 - 4",
+        roomSize: 51,
         bedSize: "Dwuosobowe",
         privateBathroom: 1,
-        roomPrice: 180,
+        roomPrice: 300,
         images: [Image1,Image2,Image3],
-        description: "Pokój DWUOSOBOWY jest zarezerwowany tylko dla jednego gościa. Znajduje się w nim sypialnia z łóżkiem o pojedynczym rozmiarze oraz prywatna łazienka. Wszystko, czego potrzebujesz, jest dla Ciebie przygotowane: pościel i koce, ręczniki, mydło i szampon, suszarka do włosów są zapewnione. W pokoju znajduje się klimatyzacja, a oczywiście również WiFi."
+        description: "Pokój dwuosobowy z dwoma łóżkami jest przeznaczony dla 2-4 gości. Znajduje się w nim sypialnia z dwoma łóżkami o rozmiarze podwójnym oraz prywatna łazienka. Wszystko, czego potrzebujesz, jest dla Ciebie przygotowane: pościel i koce, ręczniki, mydło i szampon, suszarka do włosów są zapewnione. W pokoju znajduje się klimatyzacja oraz oczywiście WiFi."
     },
     {
         id:6,
-        roomType:"Pokój 6",
-        maxGuests: 2,
-        roomSize: 28,
-        bedSize: "Dwuosobowe",
-        privateBathroom: 1,
-        roomPrice: 180,
+        roomType:"Pokój dwuosobowy Deluxe z dwoma łóżkami",
+        maxGuests: "2 - 4",
+        roomSize: 59,
+        bedSize: "Dwuosobowe wielkie",
+        privateBathroom: 2,
+        roomPrice: 360,
         images: [Image1,Image2,Image3],
-        description: "Pokój DWUOSOBOWY jest zarezerwowany tylko dla jednego gościa. Znajduje się w nim sypialnia z łóżkiem o pojedynczym rozmiarze oraz prywatna łazienka. Wszystko, czego potrzebujesz, jest dla Ciebie przygotowane: pościel i koce, ręczniki, mydło i szampon, suszarka do włosów są zapewnione. W pokoju znajduje się klimatyzacja, a oczywiście również WiFi."
+        description: "Pokój dwuosobowy typu Deluxe z dwoma łóżkami jest przeznaczony dla 2-4 gości. Znajduje się w nim sypialnia z dwoma łóżkami o rozmiarze Queen oraz prywatna łazienka. Wszystko, czego potrzebujesz, jest dla Ciebie przygotowane: pościel i koce, ręczniki, mydło i szampon, suszarka do włosów są zapewnione. W pokoju znajduje się klimatyzacja oraz oczywiście WiFi."
     },
 ];
-
 export default roomsData;

@@ -21,8 +21,8 @@ function Contact  (){
                 <Grid container spacing={2}>
                     <Grid item xs={12} sm={6} align="center">
                         <h2>Kontakt: </h2><br/>
-                        <p><FontAwesomeIcon icon={faMap}/> Wczasowa 25</p><br/>
-                        <p><FontAwesomeIcon icon={faMapMarker}/> 58-540 Karpacz, PL</p><br/>
+                        <p><FontAwesomeIcon icon={faMap}/> Wczasowa</p><br/>
+                        <p><FontAwesomeIcon icon={faMapMarker}/> 58-540 Karpacz, Polska A</p><br/>
                         <p><FontAwesomeIcon icon={faPhone}/> 21 37 666</p><br/>
                         <FontAwesomeIcon icon={faEnvelope}/><a
                         href="mailto:adres_email@example.com"> recepcja@mail</a>
