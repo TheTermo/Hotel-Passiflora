@@ -9,7 +9,7 @@ import CurrencyConverter from "./CurrencyConverter";
 import roomsData from "./roomsData";
 import { useParams } from 'react-router-dom';
 import Carousel from "react-material-ui-carousel";
-import Reservation from "./Reservations/Reservation"
+import Book from "./Book/Book"
 
 const Room = () => {
     const { id } = useParams();
@@ -35,7 +35,7 @@ const Room = () => {
                         <Paper style={{ padding:"1px 5px"}}>
                             <h2>Rezerwacja</h2><br/>
 
-                            <Reservation/>
+                            <Book/>
 
                             {/*<Button  variant="contained" color="primary" style={{marginTop: '2%', marginBottom: '2%'}}>*/}
                             {/*    Zarezerwuj teraz*/}
