@@ -3,8 +3,8 @@ import Header from "../Header/Header";
 import AboutImg from "../../images/1.JPG";
 import {Button, Grid, TextField} from "@mui/material";
 import Footer from "../Footer/Footer";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPhone, faEnvelope, faMapMarker, faMap   } from '@fortawesome/free-solid-svg-icons';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faPhone, faEnvelope, faMapMarker, faMap} from '@fortawesome/free-solid-svg-icons';
 import {Card, CardContent} from "@mui/material";
 import Typography from "@mui/material/Typography";
 

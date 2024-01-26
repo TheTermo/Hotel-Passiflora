@@ -4,11 +4,12 @@ import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import AboutImg from "../../images/gradient.jpg";
 import "./Rooms.scss";
-import { Button, Grid, Paper } from "@mui/material";
+import { Grid, Paper } from "@mui/material";
 import CurrencyConverter from "./CurrencyConverter";
 import roomsData from "./roomsData";
 import { useParams } from 'react-router-dom';
 import Carousel from "react-material-ui-carousel";
+import Reservation from "./Reservations/Reservation"
 
 const Room = () => {
     const { id } = useParams();
@@ -31,14 +32,17 @@ const Room = () => {
                         <p>{room.description}</p>
                     </Grid>
                     <Grid item xs={12} sm={6}>
-                        <Paper>
-                            <div>
-                                <h2>Dostępność</h2>
-                            </div>
-                            <Button variant="contained" color="primary" style={{marginTop: '2%', marginBottom: '2%'}}>
-                                Zarezerwuj teraz
-                            </Button>
+                        <Paper style={{ padding:"1px 5px"}}>
+                            <h2>Rezerwacja</h2><br/>
+
+                            <Reservation/>
+
+                            {/*<Button  variant="contained" color="primary" style={{marginTop: '2%', marginBottom: '2%'}}>*/}
+                            {/*    Zarezerwuj teraz*/}
+                            {/*</Button>*/}
+
                             <p>Cena: {room.roomPrice} zł</p>
+
                             <CurrencyConverter roomPrice={room.roomPrice}/>
                         </Paper>
                     </Grid>
@@ -46,7 +50,7 @@ const Room = () => {
                         <h3>Zdjęcia</h3>
                         <Carousel>
                             {room.images.map((image, i) => (
-                                <Item key={i} image={image} />
+                                <Item key={i} image={image}/>
                             ))}
                         </Carousel>
                     </Grid>
