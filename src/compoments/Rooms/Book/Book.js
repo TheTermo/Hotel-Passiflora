@@ -1,7 +1,11 @@
-import {Button, Grid, TextField} from "@mui/material";
-import {useState} from "react";
-import {initializeApp} from "firebase/app";
-import {getDatabase, ref, set} from "firebase/database";
+import { Button, Grid, TextField } from "@mui/material";
+import React, { useState } from "react";
+import { initializeApp } from "firebase/app";
+import { getDatabase, ref, set } from "firebase/database";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { DatePicker } from "@mui/x-date-pickers/DatePicker";
+import dayjs from "dayjs";
 
 const firebaseConfig = {
     apiKey: "AIzaSyAB9t6EaDzyJ9nw78y4eOBFVg3PlhvjwWM",
@@ -31,20 +35,19 @@ const Book = ({ onReservation }) => {
             writeUserData();
             function writeUserData() {
                 const db = getDatabase();
-                set(ref(db, 'data/'), {
+                set(ref(db, 'data/booking'), {
                     bookingdate: book_date.value,
                     leave_date: leave_date.value,
                 });
             }
             alert('Your booking has been made');
-            const BookPageDiv = document.querySelector('.box');
             const container = document.querySelector('.container');
-            setvalid(!valid + BookPageDiv.classList.add("show"));
-            sethide(!hide + container.classList.add("hide"));
+            sethide(!hide);
+            container.classList.add("hide");
         }
     }
     return (
-        <form action="" onSubmit={handleSubmit}>
+        <form action="" onSubmit={handleSubmit} className="container">
             <Grid container spacing={1}>
                 <Grid xs={12} item>
                     <TextField
@@ -67,18 +70,39 @@ const Book = ({ onReservation }) => {
                 </Grid>
 
                 <Grid xs={12} item>
-                    <div className="inputData">
-                        <input type="date" name="" id="book-date"></input>
-                    </div>
+                    {/*<div className="inputData">*/}
+                    {/*    <input type="date" name="" id="book-date"></input>*/}
+                    {/*</div>*/}
 
-                    <div className="inputData">
-                        <input type="date" name="" id="leave-date"></input>
-                    </div>
+                    {/*<div className="inputData">*/}
+                    {/*    <input type="date" name="" id="leave-date"></input>*/}
+                    {/*</div>*/}
+                    <LocalizationProvider dateAdapter={AdapterDayjs}>
+                        <DatePicker>
+                            <TextField
+                                type="date"
+                                variant="outlined"
+                                label="Pierwsza data"
+                                fullWidth
+                                required
+                                id="book-date"
+                            />
+                        </DatePicker>
+                        <DatePicker>
+                            <TextField
+                                type="date"
+                                variant="outlined"
+                                label="Druga data"
+                                fullWidth
+                                required
+                                id="leave-date"
+                            />
+                        </DatePicker>
+                    </LocalizationProvider>
                 </Grid>
 
                 <Grid xs={12} item>
-                    <Button type="submit" variant="contained" color="primary"
-                            style={{marginTop: '2%', marginBottom: '2%'}}>
+                    <Button type="submit" variant="contained" color="primary">
                         Zarezerwuj
                     </Button>
                 </Grid>
