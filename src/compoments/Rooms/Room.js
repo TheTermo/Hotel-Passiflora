@@ -58,9 +58,7 @@ const Room = () => {
 };
 function Item(props) {
     return (
-        <Paper>
             <img src={props.image} alt="Room" className="imageStyle" />
-        </Paper>
     );
 }
 export default Room;

@@ -7,16 +7,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone, faEnvelope, faMapMarker, faMap   } from '@fortawesome/free-solid-svg-icons';
 import {Card, CardContent} from "@mui/material";
 import Typography from "@mui/material/Typography";
-import ReactWeather, { useOpenWeather } from 'react-open-weather';
 
 function Contact  (){
-    const { data, isLoading, errorMessage } = useOpenWeather({
-        key: '60af61672800aa038b0504da441c0034',
-        lat: '50.772145',
-        lon: '15.747546',
-        lang: 'pl',
-        unit: 'metric',
-    });
     return(
         <>
             <Navbar/>
@@ -34,19 +26,10 @@ function Contact  (){
                         <p><FontAwesomeIcon icon={faPhone}/> 21 37 666</p><br/>
                         <FontAwesomeIcon icon={faEnvelope}/>
                         <a href="mailto:adres_email@example.com"> recepcja@mail</a>
-                        <ReactWeather
-                            isLoading={isLoading}
-                            errorMessage={errorMessage}
-                            data={data}
-                            lang="pl"
-                            locationLabel="Karpacz"
-                            unitsLabels={{ temperature: 'C', windSpeed: 'Km/h' }}
-                            showForecast
-                        />
                     </Grid>
 
                     <Grid item xs={12} sm={6}>
-                        <Card style={{maxWidth:550, padding:"10px 5px"}}>
+                    <Card style={{maxWidth:550, padding:"10px 5px"}}>
                             <CardContent>
                                 <Typography gutterBottom variant="h5">Napisz do nas</Typography>
                                 <form>
