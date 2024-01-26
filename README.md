@@ -4,7 +4,7 @@
 
 Strona hotelu z systemem rezerwacji 
 
-https://hotel-passiflora-booking-site-react.netlify.app/
+https://hotel-booking-site-react.netlify.app/
 
 ## Funkcje
 
