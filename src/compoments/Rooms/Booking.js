@@ -1,5 +1,7 @@
 import { Button, Grid, TextField } from "@mui/material";
 import React, { useState } from "react";
+import Alert from '@mui/material/Alert';
+import AlertTitle from '@mui/material/AlertTitle';
 
 const Booking = () => {
         const [user, setUser] = useState(
@@ -7,15 +9,17 @@ const Booking = () => {
                 Name:'', Surname:'',  StartDate:'', EndDate:''
             }
         )
+
+        const [res, setRes] = useState(null);
+
         let name, value
-    console.log(user)
         const data = (e) =>
         {
             name = e.target.name;
             value = e.target.value;
             setUser({...user, [name]: value});
         }
-        const getData = (e) =>
+        const getData = async (e) =>
         {
             const {Name, Surname, StartDate, EndDate} = user;
             e.preventDefault();
@@ -28,25 +32,21 @@ const Booking = () => {
                     Name, Surname, StartDate, EndDate
                 })
             }
-            const res = fetch(
+            const res =  await fetch(
                 'https://passiflora-37914-default-rtdb.europe-west1.firebasedatabase.app/UserData.json',
                 options
             )
-            console.log(res)
-            if(res)
-                {
-                alert("Rezerwacja udana")
-                }
-            else
-                {
-                alert("Błąd")
-                }
+            if (res.ok) {
+                setRes(true);
+            } else {
+                setRes(false);
+            }
         }
 
 return (
-    <form method="POST">
-        <Grid container spacing={1}>
-            <Grid xs={12} item>
+    <form method="POST" onSubmit={getData}>
+        <Grid container spacing={1} justifyContent="center" alignItems="center">
+            <Grid xs={12} sm={6} item>
                 <TextField
                     type="text"
                     name="Name"
@@ -60,7 +60,7 @@ return (
                 />
             </Grid>
 
-            <Grid xs={12}  item>
+            <Grid xs={12} sm={6}  item>
                 <TextField
                     type="text"
                     name="Surname"
@@ -74,7 +74,7 @@ return (
                 />
             </Grid>
 
-            <Grid xs={12} item>
+            <Grid xs={12} sm={6} item>
                 <TextField
                     type="date"
                     name="StartDate"
@@ -84,7 +84,9 @@ return (
                     required
                     onChange={data}
                 />
+            </Grid>
 
+            <Grid xs={12} sm={6} item>
                 <TextField
                     type="date"
                     name="EndDate"
@@ -97,8 +99,18 @@ return (
             </Grid>
 
             <Grid xs={12} item>
-                <Button onClick={getData} type="submit" variant="contained" color="primary">Zarezerwuj</Button>
+                <Button type="submit" variant="contained" color="secondary">Zarezerwuj</Button>
             </Grid>
+
+            {res !== null && (
+                <Grid xs={4} item>
+                    <Alert severity={res ? "success" : "error"} style={{ margin: '0 auto' }}>
+                        <AlertTitle>{res ? "Success" : "Error"}</AlertTitle>
+                        {res ? "Rezerwacja udana" : "Błąd"}
+                    </Alert>
+                </Grid>
+            )}
+
         </Grid>
     </form>
 );
