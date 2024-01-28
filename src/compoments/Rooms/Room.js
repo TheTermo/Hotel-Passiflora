@@ -5,12 +5,10 @@ import Footer from "../Footer/Footer";
 import AboutImg from "../../images/gradient.jpg";
 import "./Rooms.scss";
 import { Grid, Paper } from "@mui/material";
-import CurrencyConverter from "./CurrencyConverter";
 import roomsData from "./roomsData";
 import { useParams } from 'react-router-dom';
 import Carousel from "react-material-ui-carousel";
 import Booking from "./Booking"
-import { Typography } from '@mui/material';
 
 const Room = () => {
     const { id } = useParams();
@@ -36,11 +34,6 @@ const Room = () => {
                         <Paper style={{ padding:"1px 5px"}}>
                             <h2>Rezerwacja</h2><br/>
                             <Booking/>
-
-                            <Typography align="right" variant="h5"> Cena: {room.roomPrice} zł</Typography>
-                            <Typography align="right" variant="h6">
-                                <CurrencyConverter roomPrice={room.roomPrice} />
-                            </Typography>
 
                         </Paper>
                     </Grid>

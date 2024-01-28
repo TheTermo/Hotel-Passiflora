@@ -1,7 +1,10 @@
-import { Button, Grid, TextField } from "@mui/material";
+import {Button, Grid, TextField, Typography} from "@mui/material";
 import React, { useState } from "react";
 import Alert from '@mui/material/Alert';
 import AlertTitle from '@mui/material/AlertTitle';
+import CurrencyConverter from "./CurrencyConverter";
+import {useParams} from "react-router-dom";
+import roomsData from "./roomsData";
 
 const Booking = () => {
         const [user, setUser] = useState(
@@ -43,7 +46,15 @@ const Booking = () => {
             }
         }
 
-return (
+    const { id } = useParams();
+    const roomId = parseInt(id);
+    const room = roomsData.find(room => room.id === roomId);
+    const startDate = user.StartDate ? new Date(user.StartDate).getTime() : 0;
+    const endDate = user.EndDate ? new Date(user.EndDate).getTime() : 0;
+    const numberOfDays = (endDate - startDate) / (1000 * 60 * 60 * 24);
+    const totalCost = numberOfDays * room.roomPrice;
+
+    return (
     <form method="POST" onSubmit={getData}>
         <Grid container spacing={1} justifyContent="center" alignItems="center">
             <Grid xs={12} sm={6} item>
@@ -110,7 +121,14 @@ return (
                     </Alert>
                 </Grid>
             )}
-
+            <Grid xs={12} item>
+                <Typography variant="h5">
+                    Cena: {user.StartDate && user.EndDate ? totalCost : room.roomPrice} zł
+                </Typography>
+                <Typography variant="h6">
+                    <CurrencyConverter roomPrice={user.StartDate && user.EndDate ? totalCost : room.roomPrice} />
+                </Typography>
+            </Grid>
         </Grid>
     </form>
 );
