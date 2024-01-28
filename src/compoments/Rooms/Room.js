@@ -10,6 +10,7 @@ import roomsData from "./roomsData";
 import { useParams } from 'react-router-dom';
 import Carousel from "react-material-ui-carousel";
 import Booking from "./Booking"
+import { Typography } from '@mui/material';
 
 const Room = () => {
     const { id } = useParams();
@@ -34,16 +35,13 @@ const Room = () => {
                     <Grid item xs={12} sm={6}>
                         <Paper style={{ padding:"1px 5px"}}>
                             <h2>Rezerwacja</h2><br/>
-
                             <Booking/>
 
-                            {/*<Button  variant="contained" color="primary" style={{marginTop: '2%', marginBottom: '2%'}}>*/}
-                            {/*    Zarezerwuj teraz*/}
-                            {/*</Button>*/}
+                            <Typography align="right" variant="h5"> Cena: {room.roomPrice} zł</Typography>
+                            <Typography align="right" variant="h6">
+                                <CurrencyConverter roomPrice={room.roomPrice} />
+                            </Typography>
 
-                            <p>Cena: {room.roomPrice} zł</p>
-
-                            <CurrencyConverter roomPrice={room.roomPrice}/>
                         </Paper>
                     </Grid>
                     <Grid item xs={12}>
