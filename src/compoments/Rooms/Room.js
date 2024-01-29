@@ -4,14 +4,14 @@ import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import AboutImg from "../../images/gradient.jpg";
 import "./Rooms.scss";
-import { Grid, Paper } from "@mui/material";
+import {Grid, Paper} from "@mui/material";
 import roomsData from "./roomsData";
-import { useParams } from 'react-router-dom';
+import {useParams} from 'react-router-dom';
 import Carousel from "react-material-ui-carousel";
 import Booking from "./Booking"
 
 const Room = () => {
-    const { id } = useParams();
+    const {id} = useParams();
     const roomId = parseInt(id);
     const room = roomsData.find(room => room.id === roomId);
 
@@ -31,7 +31,7 @@ const Room = () => {
                         <p>{room.description}</p>
                     </Grid>
                     <Grid item xs={12} sm={6}>
-                        <Paper style={{ padding:"1px 5px"}}>
+                        <Paper style={{padding: "1px 5px"}}>
                             <h2>Rezerwacja</h2><br/>
                             <Booking/>
 
@@ -51,9 +51,11 @@ const Room = () => {
         </>
     );
 };
+
 function Item(props) {
     return (
-            <img src={props.image} alt="Room" className="imageStyle" />
+        <img src={props.image} alt="Room" className="imageStyle"/>
     );
 }
+
 export default Room;
