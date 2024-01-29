@@ -34,6 +34,7 @@ const Booking = () => {
             })
         }
         const res = await fetch(
+            //process.env.DATABASE,
             'https://passiflora-37914-default-rtdb.europe-west1.firebasedatabase.app/UserData.json',
             options
         )
