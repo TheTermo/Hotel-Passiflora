@@ -8,7 +8,7 @@ import "./galleryGrip.scss"
 import {useState} from "react";
 import CloseIcon from '@mui/icons-material/Close';
 
-function GalleryGrip  () {
+function GalleryGrip() {
     let data = [
         {id: 1, imgSrc: Image1,},
         {id: 2, imgSrc: Image2,},
@@ -19,27 +19,28 @@ function GalleryGrip  () {
     ];
     const [model, setModel] = useState(false);
     const [tempimgSrc, setTempImgSrc] = useState('');
-    const getImg = (imgSrc) =>{
-         setTempImgSrc(imgSrc);
-         setModel(true);
+    const getImg = (imgSrc) => {
+        setTempImgSrc(imgSrc);
+        setModel(true);
     }
-    return(
-            <>
-                <h1 className="gallery-title">Zdjęcia:</h1>
-                <div className={model? "model open" : "model"}>
-                    <img alt="img" src={tempimgSrc}/>
-                    <CloseIcon onClick={()=> setModel(false)} />
-                </div>
-                <div className="gallery">
-                    {data.map((item, index)=>{
-                        return(
-                            <div className="pics" key={index} onClick={()=> getImg(item.imgSrc)}>
-                                <img alt="img1" src={item.imgSrc} style={{width:'100%'}}/>
-                            </div>
-                        )
-                    })}
-                </div>
-            </>
+    return (
+        <>
+            <h1 className="gallery-title">Zdjęcia:</h1>
+            <div className={model ? "model open" : "model"}>
+                <img alt="img" src={tempimgSrc}/>
+                <CloseIcon onClick={() => setModel(false)}/>
+            </div>
+            <div className="gallery">
+                {data.map((item, index) => {
+                    return (
+                        <div className="pics" key={index} onClick={() => getImg(item.imgSrc)}>
+                            <img alt="img1" src={item.imgSrc} style={{width: '100%'}}/>
+                        </div>
+                    )
+                })}
+            </div>
+        </>
     )
 }
+
 export default GalleryGrip;
