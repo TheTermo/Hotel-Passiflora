@@ -112,7 +112,7 @@ const Booking = () => {
                         required
                         onChange={data}
                         InputProps={{
-                            inputProps: { min: new Date(new Date().getTime() + 24 * 60 * 60 * 1000).toISOString().split("T")[0] },
+                            inputProps: {min: new Date(new Date().getTime() + 24 * 60 * 60 * 1000).toISOString().split("T")[0]},
                         }}
                         InputLabelProps={{
                             shrink: true,

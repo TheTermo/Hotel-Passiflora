@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect} from 'react';
 
-const CurrencyConverter = ({ roomPrice }) => {
-    const grayTextStyle = { color: 'gray' };
-    const [exchangeRates, setExchangeRates] = useState({ euro: null, dollar: null });
+const CurrencyConverter = ({roomPrice}) => {
+    const grayTextStyle = {color: 'gray'};
+    const [exchangeRates, setExchangeRates] = useState({euro: null, dollar: null});
 
     useEffect(() => {
         const euroRate = 0.22792;
         const dollarRate = 0.24779;
 
-        setExchangeRates({ euro: euroRate, dollar: dollarRate });
+        setExchangeRates({euro: euroRate, dollar: dollarRate});
     }, [roomPrice]);
 
     const convertToEuro = (price) => {
