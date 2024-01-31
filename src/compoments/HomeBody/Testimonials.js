@@ -7,8 +7,9 @@ import img3 from "../../images/img3.jpg"
 import img4 from "../../images/img4.jpg"
 import img5 from "../../images/img5.jpg"
 import img6 from "../../images/img6.jpg"
-import { Paper } from '@mui/material'
-export default function Testimonials(){
+import {Paper} from '@mui/material'
+
+export default function Testimonials() {
     const items = [
         {
             name: "Luksus i Komfort w Jednym Miejscu",
@@ -41,7 +42,7 @@ export default function Testimonials(){
             image: img6
         },
     ]
-    return(
+    return (
         <Container fluid>
             <Carousel>
                 {items.map((item, i) => (
@@ -55,7 +56,7 @@ export default function Testimonials(){
 function Item(props) {
     return (
         <Paper className="item-container">
-            <img src={props.item.image} alt={props.item.name} />
+            <img src={props.item.image} alt={props.item.name}/>
             <div className="overlay"></div>
             <div className="content">
                 <h2>{props.item.name}</h2>

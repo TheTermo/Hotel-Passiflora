@@ -4,8 +4,8 @@ import AboutImg from "../../images/eddi-aguirre-ZAVHbpOn4Jk-unsplash.jpg";
 import Footer from "../Footer/Footer";
 import GalleryGrip from "../Gallery/GalleryGrip";
 
-function Gallery  (){
-    return(
+function Gallery() {
+    return (
         <>
             <>
                 <Navbar/>
@@ -15,9 +15,10 @@ function Gallery  (){
                     title="Galeria"
                 />
                 <GalleryGrip/>
-               <Footer/>
+                <Footer/>
             </>
         </>
     )
 }
+
 export default Gallery;

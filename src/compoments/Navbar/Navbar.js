@@ -1,10 +1,8 @@
-import  { Component} from "react";
-import { Link } from "react-router-dom";
+import {Component} from "react";
+import {Link} from "react-router-dom";
 import "./Navbar.scss";
 
-
 class Navbar extends Component {
-
     constructor(props) {
         super(props);
         this.MenuItems = [
@@ -32,11 +30,12 @@ class Navbar extends Component {
     }
 
     state = {clicked: false};
-    handleClick = () =>{
+    handleClick = () => {
         this.setState({clicked: !this.state.clicked})
     }
-    render(){
-        return(
+
+    render() {
+        return (
             <nav className="NavbarItem">
                 <h1 className="navbar-logo">Hotel Passiflora</h1>
 
@@ -57,4 +56,5 @@ class Navbar extends Component {
         )
     }
 }
+
 export default Navbar;
