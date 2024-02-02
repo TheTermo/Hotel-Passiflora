@@ -4,11 +4,11 @@ import Image3 from "../../images/img3.jpg";
 import Image4 from "../../images/img4.jpg";
 import Image5 from "../../images/img5.jpg";
 import Image6 from "../../images/img6.jpg";
-import "./galleryGrip.scss"
+import "./galleryGrid.scss"
 import {useState} from "react";
 import CloseIcon from '@mui/icons-material/Close';
 
-function GalleryGrip() {
+function GalleryGrid() {
     let data = [
         {id: 1, imgSrc: Image1,},
         {id: 2, imgSrc: Image2,},
@@ -43,4 +43,4 @@ function GalleryGrip() {
     )
 }
 
-export default GalleryGrip;
+export default GalleryGrid;

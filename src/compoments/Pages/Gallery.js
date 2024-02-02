@@ -2,7 +2,7 @@ import Navbar from "../Navbar/Navbar";
 import Header from "../Header/Header";
 import AboutImg from "../../images/eddi-aguirre-ZAVHbpOn4Jk-unsplash.jpg";
 import Footer from "../Footer/Footer";
-import GalleryGrip from "../Gallery/GalleryGrip";
+import GalleryGrid from "../Gallery/GalleryGrid";
 
 function Gallery() {
     return (
@@ -14,7 +14,7 @@ function Gallery() {
                     headerImg={AboutImg}
                     title="Galeria"
                 />
-                <GalleryGrip/>
+                <GalleryGrid/>
                 <Footer/>
             </>
         </>
