@@ -34,7 +34,6 @@ const Room = () => {
                         <Paper style={{padding: "1px 5px"}}>
                             <h2>Rezerwacja</h2><br/>
                             <Booking/>
-
                         </Paper>
                     </Grid>
                     <Grid item xs={12}>
