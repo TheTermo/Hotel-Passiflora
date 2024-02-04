@@ -20,6 +20,41 @@ const Booking = () => {
         name = e.target.name;
         value = e.target.value;
         setUser({...user, [name]: value});
+
+        // Jeśli zmieniamy StartDate, dodaj 1 dzień do EndDate
+        if (name === 'StartDate') {
+            const nextDay = new Date(new Date(value).getTime() + 24 * 60 * 60 * 1000);
+            const newEndDate = user.EndDate && new Date(user.EndDate) <= nextDay ? nextDay.toISOString().split("T")[0] : user.EndDate;
+            setUser((prevUser) => ({
+                ...prevUser,
+                StartDate: value,
+                EndDate: newEndDate,
+            }));
+        }
+
+        // Jeśli zmieniamy EndDate, sprawdź czy nie jest przed StartDate
+        if (name === 'EndDate') {
+            const selectedEndDate = new Date(value);
+            const selectedStartDate = new Date(user.StartDate);
+
+            // Jeśli EndDate jest przed lub równy StartDate, dodaj 1 dzień do EndDate
+            if (selectedEndDate <= selectedStartDate) {
+                const nextDay = new Date(selectedEndDate.getTime() + 24 * 60 * 60 * 1000);
+                setUser((prevUser) => ({
+                    ...prevUser,
+                    StartDate: selectedEndDate.toISOString().split("T")[0],
+                    EndDate: nextDay.toISOString().split("T")[0],
+                }));
+            } else {
+                // W przeciwnym razie, zaktualizuj tylko EndDate
+                setUser((prevUser) => ({
+                    ...prevUser,
+                    EndDate: value,
+                }));
+            }
+        }
+
+
     }
     const getData = async (e) => {
         const {Name, Surname, StartDate, EndDate} = user;
